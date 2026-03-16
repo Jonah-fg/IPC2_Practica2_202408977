@@ -1,12 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace practica_2_IPC2
+﻿public class Paciente
 {
-    internal class Paciente
+    public string Nombre { get; set; }
+    public int Edad { get; set; }
+    public string Especialidad { get; set; }
+    public int TiempoAtencion { get; set; }
+    public int TiempoEspera { get; set; }
+
+    public Paciente(string nombre, int edad, string especialidad)
     {
+        Nombre =nombre;
+        Edad=edad;
+        Especialidad=especialidad;
+
+        switch (especialidad)
+        {
+            case "Medicina General":
+                TiempoAtencion= 10;
+                break;
+
+            case "Pediatría":
+                TiempoAtencion =15;
+                break;
+
+            case "Ginecología":
+                TiempoAtencion =20;
+                break;
+
+            case "Dermatología":
+                TiempoAtencion=25;
+                break;
+        }
+    }
+
+    public int TiempoTotal
+    {
+        get { return TiempoEspera + TiempoAtencion; }
     }
 }
