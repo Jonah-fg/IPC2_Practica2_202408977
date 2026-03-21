@@ -1,4 +1,6 @@
-﻿public class Paciente
+﻿using System.Windows.Forms;
+
+public class Paciente
 {
     public string Nombre { get; set; }
     public int Edad { get; set; }
@@ -23,13 +25,18 @@
                 break;
 
             case "Ginecología":
-                TiempoAtencion =20;
+                TiempoAtencion=20;
                 break;
 
             case "Dermatología":
                 TiempoAtencion=25;
                 break;
+
+            default:
+                TiempoAtencion = -1; 
+                break;
         }
+        MessageBox.Show("Tiempo asignado: " + TiempoAtencion);
     }
 
     public int TiempoTotal
